@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Newline or Semicolon', got 'Lambda'
+-------------------------------------------------------------------------------
+
+At (line 2 column 11) in 'tests/parser/lambdaParamErr.test'
+x = (123) => foo
+          ^

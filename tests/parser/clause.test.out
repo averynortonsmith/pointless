@@ -1,0 +1,19 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Where 
+   (Name "foo")
+   (Object 
+    (Def 
+     (Name "bar")
+     (With 
+      (Array 
+       (Number 1)
+       (Number 2))
+      (Def 
+       (Index 
+        (Name "$")
+        (Number 0))
+       (Number 1))))))))

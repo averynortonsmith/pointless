@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Tokenizer Error:
+
+Unmatched quote (must escape line breaks in string)
+-------------------------------------------------------------------------------
+
+At (line 1 column 1) in 'tests/tokenizer/newlineStrErr.test'
+"foo
+^

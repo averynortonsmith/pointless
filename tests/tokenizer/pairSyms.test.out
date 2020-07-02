@@ -1,0 +1,12 @@
+  1:1  [ LParen       ] (
+  1:2  [ Newline      ] 
+  2:1  [ LBracket     ] {
+  2:2  [ Newline      ] 
+  3:1  [ LArray       ] [
+  3:2  [ Newline      ] 
+  4:1  [ RParen       ] )
+  4:2  [ Newline      ] 
+  5:1  [ RBracket     ] }
+  5:2  [ Newline      ] 
+  6:1  [ RArray       ] ]
+  6:2  [ EOF          ] 

@@ -1,0 +1,6 @@
+  1:1  [ Semicolon    ] ;
+  1:2  [ Newline      ] 
+  2:1  [ Colon        ] :
+  2:2  [ Newline      ] 
+  3:1  [ Comma        ] ,
+  3:2  [ EOF          ] 

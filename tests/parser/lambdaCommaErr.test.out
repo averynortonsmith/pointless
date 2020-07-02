@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Number or String or Name or Label or Bool or LArray or LParen or LBracket', got 'RParen'
+-------------------------------------------------------------------------------
+
+At (line 2 column 8) in 'tests/parser/lambdaCommaErr.test'
+x = (a,) => foo
+       ^

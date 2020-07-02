@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Dollar', got 'Name'
+-------------------------------------------------------------------------------
+
+At (line 2 column 12) in 'tests/parser/withDollarErr.test'
+x = x with foo = bar
+           ^

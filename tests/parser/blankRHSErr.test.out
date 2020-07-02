@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Number or String or Name or Label or Bool or LArray or LParen or LBracket', got 'Blank'
+-------------------------------------------------------------------------------
+
+At (line 2 column 11) in 'tests/parser/blankRHSErr.test'
+foo = (1, _)
+          ^

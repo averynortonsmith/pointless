@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Yield', got 'Number'
+-------------------------------------------------------------------------------
+
+At (line 2 column 35) in 'tests/parser/whenNoYieldErr.test'
+x = for x in [1, 2, 3] when false 123
+                                  ^

@@ -14,6 +14,14 @@ check: pub
 
 .PHONY: dev
 dev: check bin/pointless
+
+.PHONY: test
+test: check bin/debug
+	-tests/runTests.sh --test -tokenize tests/tokenizer/*.test
+	-tests/runTests.sh --test -parse tests/parser/*.test
 	
 bin/pointless: makefile lib/*/*.dart
 	dart2native lib/pointless.dart -o bin/pointless
+
+bin/debug: makefile lib/*/*.dart
+	dart2native lib/src/debug.dart -o bin/debug

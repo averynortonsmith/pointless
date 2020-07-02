@@ -1,0 +1,24 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Dict []))
+ (Def 
+  (Name "x")
+  (Dict 
+   (Pair 
+    (Number 1)
+    (Number 2))
+   (Pair 
+    (Number 3)
+    (String "asdf"))))
+ (Def 
+  (Name "x")
+  (Dict 
+   (Pair 
+    (Number 1)
+    (Number 2))
+   (Pair 
+    (Number 3)
+    (String "asdf")))))

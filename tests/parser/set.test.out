@@ -1,0 +1,16 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Set (Number 1)))
+ (Def 
+  (Name "x")
+  (Set 
+   (Number 1)
+   (Number 2)))
+ (Def 
+  (Name "x")
+  (Set 
+   (Number 1)
+   (Number 2))))

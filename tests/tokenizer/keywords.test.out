@@ -1,0 +1,46 @@
+  1:1  [ If           ] if
+  1:3  [ Newline      ] 
+  2:1  [ Then         ] then
+  2:5  [ Newline      ] 
+  3:1  [ Else         ] else
+  3:5  [ Newline      ] 
+  4:1  [ Where        ] where
+  4:6  [ Newline      ] 
+  5:1  [ With         ] with
+  5:5  [ Newline      ] 
+  6:1  [ Cond         ] cond
+  6:5  [ Newline      ] 
+  7:1  [ Case         ] case
+  7:5  [ Newline      ] 
+  8:1  [ And          ] and
+  8:4  [ Newline      ] 
+  9:1  [ Or           ] or
+  9:3  [ Newline      ] 
+ 10:1  [ Not          ] not
+ 10:4  [ Newline      ] 
+ 11:1  [ In           ] in
+ 11:3  [ Newline      ] 
+ 12:1  [ As           ] as
+ 12:3  [ Newline      ] 
+ 13:1  [ Bool         ] true
+ 13:5  [ Newline      ] 
+ 14:1  [ Bool         ] false
+ 14:6  [ Newline      ] 
+ 15:1  [ For          ] for
+ 15:4  [ Newline      ] 
+ 16:1  [ When         ] when
+ 16:5  [ Newline      ] 
+ 17:1  [ Yield        ] yield
+ 17:6  [ Newline      ] 
+ 18:1  [ Import       ] import
+ 18:7  [ Newline      ] 
+ 19:1  [ Export       ] export
+ 19:7  [ Newline      ] 
+ 20:1  [ Requires     ] requires
+ 20:9  [ Newline      ] 
+ 21:1  [ Throw        ] throw
+ 21:6  [ Newline      ] 
+ 22:1  [ Try          ] try
+ 22:4  [ Newline      ] 
+ 23:1  [ Catch        ] catch
+ 23:6  [ EOF          ] 

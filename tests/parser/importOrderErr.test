@@ -1,0 +1,4 @@
+
+x = 123
+
+import "foo" as bar

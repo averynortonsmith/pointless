@@ -1,0 +1,6 @@
+  1:1  [ String       ] "foo bar"
+  1:10 [ Newline      ] 
+  2:1  [ String       ] "foo bar -- baz"
+  2:17 [ Newline      ] 
+  3:1  [ String       ] "\""
+  3:5  [ EOF          ] 

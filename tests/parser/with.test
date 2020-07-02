@@ -1,0 +1,9 @@
+
+x = x with $[0].foo[0].bar = y
+x = x with {$.foo = y}
+x = x with {$.foo = y; $.bar = 123}
+x = x with {
+  $.foo += y;
+  $.bar = 123
+}
+x = x with $[0] = y with $[1] = 2

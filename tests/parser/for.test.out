@@ -1,0 +1,61 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Call 
+   (Name "concatMap")
+   (Func 
+    (Name "x")
+    (List (Name "x")))
+   (List 
+    (Number 1)
+    (Number 2)
+    (Number 3))))
+ (Def 
+  (Name "x")
+  (Call 
+   (Name "concatMap")
+   (Func 
+    (Name "x")
+    (Conditional 
+     (Bool false)
+     (List (Number 0))
+     (List [])))
+   (List 
+    (Number 1)
+    (Number 2)
+    (Number 3))))
+ (Def 
+  (Name "x")
+  (Call 
+   (Name "concatMap")
+   (Func 
+    (Name "x")
+    (Call 
+     (Name "concatMap")
+     (Func 
+      (Name "y")
+      (List (Name "y")))
+     (List [])))
+   (List 
+    (Number 1)
+    (Number 2)
+    (Number 3))))
+ (Def 
+  (Name "x")
+  (Call 
+   (Name "concatMap")
+   (Func 
+    (Name "x")
+    (List 
+     (Call 
+      (Name "concatMap")
+      (Func 
+       (Name "y")
+       (List (Name "y")))
+      (List []))))
+   (List 
+    (Number 1)
+    (Number 2)
+    (Number 3)))))

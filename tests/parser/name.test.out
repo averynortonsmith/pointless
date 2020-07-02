@@ -1,0 +1,6 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "y")
+  (Name "foo")))

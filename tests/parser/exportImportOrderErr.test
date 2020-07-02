@@ -1,0 +1,4 @@
+
+import "foo" as bar
+
+export {foo}

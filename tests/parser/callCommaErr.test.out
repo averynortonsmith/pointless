@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Number or String or Name or Label or Bool or LArray or LParen or LBracket', got 'RParen'
+-------------------------------------------------------------------------------
+
+At (line 2 column 14) in 'tests/parser/callCommaErr.test'
+x = foo(1, 2,)
+             ^

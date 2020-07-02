@@ -1,0 +1,27 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Object 
+   (Def 
+    (Name "foo")
+    (String "bar"))))
+ (Def 
+  (Name "x")
+  (Object 
+   (Def 
+    (Name "foo")
+    (String "bar"))
+   (Def 
+    (Name "n")
+    (Number 123))))
+ (Def 
+  (Name "x")
+  (Object 
+   (Def 
+    (Name "a")
+    (Number 1))
+   (Def 
+    (Name "b")
+    (Number 2)))))

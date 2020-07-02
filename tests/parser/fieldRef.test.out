@@ -1,0 +1,17 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (FieldRef 
+   (Name "foo")
+   (Name "bar")))
+ (Def 
+  (Name "y")
+  (FieldRef 
+   (FieldRef 
+    (FieldRef 
+     (Name "foo")
+     (Name "bar"))
+    (Name "baz"))
+   (Name "z"))))

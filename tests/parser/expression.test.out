@@ -1,0 +1,9 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (BinaryOp 
+   Tok.Add
+   (Name "foo")
+   (Number 4))))

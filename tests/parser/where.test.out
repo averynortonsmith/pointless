@@ -1,0 +1,60 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Where 
+   (Name "foo")
+   (Object 
+    (Def 
+     (Name "a")
+     (Name "b")))))
+ (Def 
+  (Name "x")
+  (Where 
+   (Name "foo")
+   (Object 
+    (Def 
+     (Name "a")
+     (Name "b")))))
+ (Def 
+  (Name "x")
+  (Where 
+   (Name "foo")
+   (Object 
+    (Def 
+     (Name "a")
+     (Name "b")))))
+ (Def 
+  (Name "x")
+  (Where 
+   (Name "foo")
+   (Object 
+    (Def 
+     (Name "a")
+     (Name "b"))
+    (Def 
+     (Name "b")
+     (Name "c")))))
+ (Def 
+  (Name "x")
+  (Where 
+   (Name "foo")
+   (Object 
+    (Def 
+     (Name "a")
+     (Name "b"))
+    (Def 
+     (Name "b")
+     (Name "c")))))
+ (Def 
+  (Name "x")
+  (Where 
+   (Name "foo")
+   (Object 
+    (Def 
+     (Name "a")
+     (Name "b"))
+    (Def 
+     (Name "b")
+     (Name "c"))))))

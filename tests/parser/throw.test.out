@@ -1,0 +1,13 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Throw (Label "ParserError")))
+ (Def 
+  (Name "x")
+  (Throw 
+   (BinaryOp 
+    Tok.Add
+    (Number 1)
+    (Number 2)))))

@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Field or LArray', got 'Assign'
+-------------------------------------------------------------------------------
+
+At (line 2 column 14) in 'tests/parser/withAccessorErr.test'
+x = x with $ = bar
+             ^

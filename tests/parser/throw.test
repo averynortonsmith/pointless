@@ -1,0 +1,3 @@
+
+x = throw ParserError
+x = throw 1 + 2

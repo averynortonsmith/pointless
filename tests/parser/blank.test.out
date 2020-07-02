@@ -1,0 +1,14 @@
+(Program 
+ null
+ []
+ (Def 
+  (Tuple 
+   (Name "a")
+   (Blank)
+   (Name "c"))
+  (Name "foo"))
+ (Def 
+  (Tuple 
+   (Blank)
+   (Blank))
+  (Number 123)))

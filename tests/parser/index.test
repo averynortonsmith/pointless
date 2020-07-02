@@ -1,0 +1,3 @@
+
+x = foo[0]
+y = foo + {bar: baz}[0]

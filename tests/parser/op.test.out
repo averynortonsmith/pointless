@@ -1,0 +1,87 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Call 
+   (Name "bar")
+   (BinaryOp 
+    Tok.Add
+    (Number 1)
+    (Name "foo"))))
+ (Def 
+  (Name "x")
+  (UnaryOp 
+   Tok.Not
+   (Name "y")))
+ (Def 
+  (Name "x")
+  (BinaryOp 
+   Tok.Or
+   (UnaryOp 
+    Tok.Not
+    (Name "y"))
+   (Name "z")))
+ (Def 
+  (Name "x")
+  (UnaryOp 
+   Tok.Neg
+   (Number 5)))
+ (Def 
+  (Name "x")
+  (BinaryOp 
+   Tok.Add
+   (UnaryOp 
+    Tok.Neg
+    (Number 5))
+   (Number 6)))
+ (Def 
+  (Name "x")
+  (BinaryOp 
+   Tok.Add
+   (Number 5)
+   (UnaryOp 
+    Tok.Neg
+    (Number 6))))
+ (Def 
+  (Name "x")
+  (BinaryOp 
+   Tok.Add
+   (Number 1)
+   (Number 2)))
+ (Def 
+  (Name "x")
+  (BinaryOp 
+   Tok.Add
+   (BinaryOp 
+    Tok.Add
+    (Number 1)
+    (Number 2))
+   (Number 3)))
+ (Def 
+  (Name "x")
+  (BinaryOp 
+   Tok.Pow
+   (Number 1)
+   (Number 2)))
+ (Def 
+  (Name "x")
+  (BinaryOp 
+   Tok.Pow
+   (Number 1)
+   (BinaryOp 
+    Tok.Pow
+    (Number 2)
+    (Number 3))))
+ (Def 
+  (Name "x")
+  (BinaryOp 
+   Tok.Add
+   (BinaryOp 
+    Tok.Pow
+    (Number 1)
+    (Number 2))
+   (BinaryOp 
+    Tok.Pow
+    (Number 3)
+    (Number 4)))))

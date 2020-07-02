@@ -1,0 +1,21 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (List []))
+ (Def 
+  (Name "y")
+  (List (Number 1)))
+ (Def 
+  (Name "z")
+  (List 
+   (Number 1)
+   (Number 2)
+   (Number 3)))
+ (Def 
+  (Name "a")
+  (List 
+   (Number 1)
+   (Number 2)
+   (Number 3))))

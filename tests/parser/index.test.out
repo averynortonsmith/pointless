@@ -1,0 +1,19 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Index 
+   (Name "foo")
+   (Number 0)))
+ (Def 
+  (Name "y")
+  (BinaryOp 
+   Tok.Add
+   (Name "foo")
+   (Index 
+    (Dict 
+     (Pair 
+      (Name "bar")
+      (Name "baz")))
+    (Number 0)))))

@@ -1,0 +1,5 @@
+
+x = for x in [1, 2, 3] yield x
+x = for x in [1, 2, 3] when false yield 0
+x = for x in [1, 2, 3] for y in [] yield y
+x = for x in [1, 2, 3] yield (for y in [] yield y)

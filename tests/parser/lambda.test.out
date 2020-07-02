@@ -1,0 +1,36 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Func 
+   (Name "a")
+   (Name "foo")))
+ (Def 
+  (Name "x")
+  (Func 
+   (Name "a")
+   (Name "foo")))
+ (Def 
+  (Name "x")
+  (Func 
+   (Name "a")
+   (Name "b")
+   (Name "foo")))
+ (Def 
+  (Name "x")
+  (Func 
+   (Name "a")
+   (Name "b")
+   (Func 
+    (Name "c")
+    (Name "foo"))))
+ (Def 
+  (Name "x")
+  (Func 
+   (Name "a")
+   (Name "b")
+   (Conditional 
+    (Bool false)
+    (Name "a")
+    (Name "b")))))

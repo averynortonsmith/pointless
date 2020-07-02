@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Construct requires 1 or more arguments or elements
+-------------------------------------------------------------------------------
+
+At (line 2 column 8) in 'tests/parser/callArgCountErr.test'
+x = foo()
+       ^

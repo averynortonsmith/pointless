@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Name', got 'Import'
+-------------------------------------------------------------------------------
+
+At (line 4 column 3) in 'tests/parser/importObjErr.test'
+  import "asdf" as a
+  ^

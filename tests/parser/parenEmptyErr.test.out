@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Number or String or Name or Label or Bool or LArray or LParen or LBracket', got 'RParen'
+-------------------------------------------------------------------------------
+
+At (line 2 column 6) in 'tests/parser/parenEmptyErr.test'
+x = ()
+     ^

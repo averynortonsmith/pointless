@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Name', got 'Import'
+-------------------------------------------------------------------------------
+
+At (line 4 column 1) in 'tests/parser/importOrderErr.test'
+import "foo" as bar
+^

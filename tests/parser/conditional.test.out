@@ -1,0 +1,20 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Conditional 
+   (Number 123)
+   (Number 4)
+   (Number 5)))
+ (Def 
+  (Name "x")
+  (Where 
+   (Conditional 
+    (Number 123)
+    (Number 4)
+    (Number 5))
+   (Object 
+    (Def 
+     (Name "a")
+     (Name "b"))))))

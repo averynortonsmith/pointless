@@ -1,0 +1,46 @@
+  1:1  [ Add          ] +
+  1:2  [ Newline      ] 
+  2:1  [ Neg          ] -
+  2:2  [ Newline      ] 
+  3:1  [ Mul          ] *
+  3:2  [ Newline      ] 
+  4:1  [ Div          ] /
+  4:2  [ Newline      ] 
+  5:1  [ Pow          ] **
+  5:3  [ Newline      ] 
+  6:1  [ Mod          ] %
+  6:2  [ Newline      ] 
+  7:1  [ AddAssign    ] +=
+  7:3  [ Newline      ] 
+  8:1  [ SubAssign    ] -=
+  8:3  [ Newline      ] 
+  9:1  [ MulAssign    ] *=
+  9:3  [ Newline      ] 
+ 10:1  [ DivAssign    ] /=
+ 10:3  [ Newline      ] 
+ 11:1  [ PowAssign    ] **=
+ 11:4  [ Newline      ] 
+ 12:1  [ ModAssign    ] %=
+ 12:3  [ Newline      ] 
+ 13:1  [ Pipe         ] |>
+ 13:3  [ Newline      ] 
+ 14:1  [ Assign       ] =
+ 14:2  [ Newline      ] 
+ 15:1  [ Equals       ] ==
+ 15:3  [ Newline      ] 
+ 16:1  [ NotEq        ] !=
+ 16:3  [ Newline      ] 
+ 17:1  [ LessThan     ] <
+ 17:2  [ Newline      ] 
+ 18:1  [ GreaterThan  ] >
+ 18:2  [ Newline      ] 
+ 19:1  [ LessEq       ] <=
+ 19:3  [ Newline      ] 
+ 20:1  [ GreaterEq    ] >=
+ 20:3  [ Newline      ] 
+ 21:1  [ Lambda       ] =>
+ 21:3  [ Newline      ] 
+ 22:1  [ Dollar       ] $
+ 22:2  [ Newline      ] 
+ 23:1  [ Concat       ] ++
+ 23:3  [ EOF          ] 

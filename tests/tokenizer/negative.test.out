@@ -1,0 +1,70 @@
+  1:1  [ Number       ] 1
+  1:2  [ Whitespace   ] 
+  1:3  [ Neg          ] -
+  1:4  [ Number       ] 1
+  1:5  [ Newline      ] 
+  2:1  [ Number       ] 1
+  2:2  [ Sub          ] -
+  2:3  [ Number       ] 1
+  2:4  [ Newline      ] 
+  3:1  [ Number       ] 1
+  3:2  [ Whitespace   ] 
+  3:3  [ Sub          ] -
+  3:4  [ Whitespace   ] 
+  3:5  [ Number       ] 1
+  3:6  [ Newline      ] 
+  4:1  [ Add          ] +
+  4:2  [ Whitespace   ] 
+  4:3  [ Neg          ] -
+  4:4  [ Whitespace   ] 
+  4:5  [ Number       ] 4
+  4:6  [ Newline      ] 
+  5:1  [ Comma        ] ,
+  5:2  [ Whitespace   ] 
+  5:3  [ Neg          ] -
+  5:4  [ Whitespace   ] 
+  5:5  [ Number       ] 4
+  5:6  [ Newline      ] 
+  6:1  [ LParen       ] (
+  6:2  [ Whitespace   ] 
+  6:3  [ Neg          ] -
+  6:4  [ Whitespace   ] 
+  6:5  [ Number       ] 4
+  6:6  [ Newline      ] 
+  7:1  [ Else         ] else
+  7:5  [ Whitespace   ] 
+  7:6  [ Neg          ] -
+  7:7  [ Whitespace   ] 
+  7:8  [ Number       ] 4
+  7:9  [ Newline      ] 
+  8:1  [ RParen       ] )
+  8:2  [ Whitespace   ] 
+  8:3  [ Sub          ] -
+  8:4  [ Whitespace   ] 
+  8:5  [ Number       ] 4
+  8:6  [ Newline      ] 
+  9:1  [ Name         ] foo
+  9:4  [ Whitespace   ] 
+  9:5  [ Sub          ] -
+  9:6  [ Whitespace   ] 
+  9:7  [ Number       ] 4
+  9:8  [ Newline      ] 
+ 10:1  [ Field        ] .foo
+ 10:5  [ Whitespace   ] 
+ 10:6  [ Sub          ] -
+ 10:7  [ Whitespace   ] 
+ 10:8  [ Number       ] 4
+ 10:9  [ Newline      ] 
+ 11:1  [ String       ] ""
+ 11:3  [ Whitespace   ] 
+ 11:4  [ Sub          ] -
+ 11:5  [ Whitespace   ] 
+ 11:6  [ Number       ] 4
+ 11:7  [ Newline      ] 
+ 12:1  [ Number       ] 123
+ 12:4  [ Whitespace   ] 
+ 12:5  [ Sub          ] -
+ 12:6  [ Whitespace   ] 
+ 12:7  [ Number       ] 4
+ 12:8  [ Newline      ] 
+ 13:1  [ EOF          ] 

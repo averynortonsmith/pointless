@@ -1,0 +1,8 @@
+
+------------
+-- comment
+import "foo" as --bar
+ bar
+-- foo
+x -- comment
+ = 123

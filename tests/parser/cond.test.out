@@ -1,0 +1,51 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Conditional 
+   (Name "foo")
+   (Name "bar")
+   null))
+ (Def 
+  (Name "x")
+  (Conditional 
+   (Name "foo")
+   (Name "bar")
+   (Conditional 
+    (Name "bar")
+    (Name "foo")
+    null)))
+ (Def 
+  (Name "x")
+  (Conditional 
+   (Name "foo")
+   (Name "bar")
+   (Name "foo")))
+ (Def 
+  (Name "x")
+  (Where 
+   (Conditional 
+    (BinaryOp 
+     Tok.Equals
+     (Number 1)
+     (Number 2))
+    (Name "bar")
+    (Conditional 
+     (Bool false)
+     (Where 
+      (Name "a")
+      (Object 
+       (Def 
+        (Name "a")
+        (Number 1))))
+     (Where 
+      (Name "foo")
+      (Object 
+       (Def 
+        (Name "foo")
+        (Number 1))))))
+   (Object 
+    (Def 
+     (Name "a")
+     (Number 4))))))

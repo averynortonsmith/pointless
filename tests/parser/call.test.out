@@ -1,0 +1,14 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Call 
+   (Name "foo")
+   (Number 1)
+   (Number 2)))
+ (Def 
+  (Name "x")
+  (Call 
+   (Name "foo")
+   (Number 1))))

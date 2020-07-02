@@ -1,0 +1,21 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Try 
+   (Call 
+    (Name "eval")
+    (String "1 + 2"))
+   (Call 
+    (Name "const")
+    (Label "False"))
+   (Func 
+    (Name "err")
+    (Number 0))))
+ (Def 
+  (Name "x")
+  (Try 
+   (Name "foo")
+   (Name "bar")
+   (Name "baz"))))

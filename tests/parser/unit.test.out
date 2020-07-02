@@ -1,0 +1,18 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Array 
+   (Number 1)
+   (Number 2)
+   (Index 
+    (List (Number 1))
+    (Number 0))
+   (FieldRef 
+    (Number 4)
+    (Name "foo"))
+   (Call 
+    (Name "foo")
+    (Number 1)
+    (Number 2)))))

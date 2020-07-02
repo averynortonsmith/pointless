@@ -1,0 +1,24 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Requires 
+   (Name "foo")
+   (BinaryOp 
+    Tok.Equals
+    (Name "a")
+    (Name "b"))))
+ (Def 
+  (Name "x")
+  (Func 
+   (Name "a")
+   (Requires 
+    (Name "b")
+    (BinaryOp 
+     Tok.Equals
+     (BinaryOp 
+      Tok.Add
+      (Name "a")
+      (Number 2))
+     (Number 4))))))

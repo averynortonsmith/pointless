@@ -1,0 +1,9 @@
+
+x = foo where a = b
+x = foo where {a = b}
+x = foo where {a = b;}
+x = foo where {a = b; b = c}
+x = foo where {a = b
+ b = c}
+x = foo where {a = b;
+ b = c}

@@ -1,0 +1,20 @@
+
+x = cond {
+  case foo bar
+}
+
+x = cond {
+  case foo bar
+  case bar foo
+}
+
+x = cond {
+  case foo bar
+  else foo
+}
+
+x = cond {
+  case 1 == 2 bar
+  case false a where a = 1
+  else foo where foo = 1
+} where a = 4

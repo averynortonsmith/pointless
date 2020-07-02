@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Number or String or Name or Label or Bool or LArray or LParen or LBracket', got 'Dollar'
+-------------------------------------------------------------------------------
+
+At (line 2 column 20) in 'tests/parser/withRHSDollarErr.test'
+x = x with $.foo = $[0]
+                   ^

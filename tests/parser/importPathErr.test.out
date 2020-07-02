@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'String', got 'Name'
+-------------------------------------------------------------------------------
+
+At (line 2 column 8) in 'tests/parser/importPathErr.test'
+import foo as bar
+       ^

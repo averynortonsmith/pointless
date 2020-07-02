@@ -1,0 +1,2 @@
+
+x = foo where bar = [1 2] with $[0] = 1

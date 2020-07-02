@@ -1,0 +1,3 @@
+
+x = try eval("1 + 2") catch const(False) err => 0
+x = try foo catch bar baz

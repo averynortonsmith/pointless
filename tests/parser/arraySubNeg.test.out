@@ -1,0 +1,27 @@
+(Program 
+ null
+ []
+ (Def 
+  (Name "x")
+  (Array 
+   (Number 1)
+   (BinaryOp 
+    Tok.Sub
+    (Number 2)
+    (Number 3))))
+ (Def 
+  (Name "x")
+  (Array 
+   (Number 1)
+   (Number 2)
+   (UnaryOp 
+    Tok.Neg
+    (Number 3))))
+ (Def 
+  (Name "x")
+  (Array 
+   (Number 1)
+   (BinaryOp 
+    Tok.Sub
+    (Number 2)
+    (Number 3)))))
