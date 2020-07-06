@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Type Error:
+
+Too many args (3) for 'PtlsFunc(b, a)'
+-------------------------------------------------------------------------------
+
+At (line 2 column 13) in 'tests/interpreter/callArityErr.test'
+output = add(1, 2, 3) |> println
+            ^

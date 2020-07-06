@@ -1,0 +1,4 @@
+
+output = [a] |> println
+
+a = [1 2].!getString

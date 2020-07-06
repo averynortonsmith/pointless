@@ -1,0 +1,6 @@
+
+output = [a, b, c] |> println
+
+a = "asdf"
+b = (x => a)(123)
+c = ((a, b) => b)(0)(true)

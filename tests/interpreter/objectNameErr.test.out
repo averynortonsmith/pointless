@@ -1,0 +1,51 @@
+-------------------------------------------------------------------------------
+Name Error:
+
+No definition for name 'b'
+-------------------------------------------------------------------------------
+
+At (line 4 column 12) in 'tests/interpreter/objectNameErr.test'
+a = {foo = b}
+           ^
+At (line 62 column 3) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/show.ptls'
+  |> toDict
+  ^
+At (line 58 column 58) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/show.ptls'
+showObject(object) = getLabelStrObject(object) + showDefs(object)
+                                                         ^
+At (line 216 column 13) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/list.ptls'
+  else [func(head(list))] ++ map(func, tail(list))
+            ^
+At (line 8 column 12) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/show.ptls'
+  else show(value) 
+           ^
+At (line 23 column 41) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/show.ptls'
+  case is(PtlsObject, value)  showObject(value)
+                                        ^
+At (line 216 column 18) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/list.ptls'
+  else [func(head(list))] ++ map(func, tail(list))
+                 ^
+At (line 50 column 13) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/list.ptls'
+  else [head(list)] ++ prependToAll(sep, tail(list))
+            ^
+At (line 239 column 35) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/list.ptls'
+  else reduce(func, func(acc, head(list)), tail(list))
+                                  ^
+At (line 33 column 47) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/show.ptls'
+  where elemStr = iter |> toList |> map(repr) |> join(sep)
+                                              ^
+At (line 15 column 3) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/string.ptls'
+  |> concatStrings
+  ^
+At (line 18 column 32) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/string.ptls'
+concatStrings(strings) = reduce(add, "", strings)
+                               ^
+At (line 10 column 28) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/io.ptls'
+println(value) = print(show(value) + "\n")
+                           ^
+At (line 21 column 39) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/show.ptls'
+  case is(PtlsList, value)    showList(value)
+                                      ^
+At (line 2 column 14) in 'tests/interpreter/objectNameErr.test'
+output = [a] |> println
+             ^

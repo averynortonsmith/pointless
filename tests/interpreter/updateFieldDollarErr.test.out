@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Number or String or Name or Label or Bool or LArray or LParen or LBracket', got 'Dollar'
+-------------------------------------------------------------------------------
+
+At (line 6 column 11) in 'tests/interpreter/updateFieldDollarErr.test'
+  $.foo = $[0]
+          ^

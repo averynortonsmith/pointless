@@ -1,0 +1,7 @@
+
+output = [a, b, c, d] |> println
+
+a = Foo(1, 2, 3)
+b = Foo
+c = Foo {}
+d = Foo {x = 123}

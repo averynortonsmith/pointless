@@ -1,0 +1,8 @@
+
+output = [a] |> println
+
+x = [1 (-1)]
+a = x with {
+  $[0] = x[1]
+  $[1] = x[0]
+}

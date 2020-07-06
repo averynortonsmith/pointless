@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Index Error:
+
+Expected integer index value, got 1.2
+-------------------------------------------------------------------------------
+
+At (line 2 column 17) in 'tests/interpreter/indexArrayFloatErr.test'
+output = [1 2 3][1.2] |> println
+                ^

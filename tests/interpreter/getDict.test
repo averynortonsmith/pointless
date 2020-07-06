@@ -1,0 +1,4 @@
+
+output = [a] |> println
+
+a = {x = 123; y(n) = n}.!getDict

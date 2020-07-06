@@ -1,0 +1,6 @@
+
+output = [a, b, c] |> println
+
+a = []
+b = [1]
+c = [1, false, x => x]

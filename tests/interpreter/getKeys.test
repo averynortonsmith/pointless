@@ -1,0 +1,5 @@
+
+output = [x, y] |> println
+
+x = {}.!getKeys
+y = {1: 2, false: "asdf"}.!getKeys

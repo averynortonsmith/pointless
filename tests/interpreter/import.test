@@ -1,0 +1,4 @@
+
+import "prelude.test" as foo
+
+output = [foo] |> println

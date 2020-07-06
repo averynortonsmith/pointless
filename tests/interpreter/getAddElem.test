@@ -1,0 +1,6 @@
+
+output = [a, b, c] |> println
+
+a = {1}.!getAddElem(1)
+b = {1}.!getAddElem(123)
+c = {1}.!getAddElem([])

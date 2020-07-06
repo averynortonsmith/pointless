@@ -1,0 +1,2 @@
+
+output = {x = 123}.y |> println

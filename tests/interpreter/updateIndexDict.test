@@ -1,0 +1,5 @@
+
+output = [a, b] |> println
+
+a = {"foo": 0} with $["foo"] = 123
+b = {"foo": 0} with $[false] = 123

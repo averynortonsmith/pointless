@@ -19,6 +19,7 @@ dev: check bin/pointless
 test: check bin/debug
 	-tests/runTests.sh --test -tokenize tests/tokenizer/*.test
 	-tests/runTests.sh --test -parse tests/parser/*.test
+	-tests/runTests.sh --test -eval tests/interpreter/*.test
 	
 bin/pointless: makefile lib/*/*.dart
 	dart2native lib/pointless.dart -o bin/pointless

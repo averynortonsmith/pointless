@@ -1,0 +1,6 @@
+
+output = [a, b, c] |> println
+
+a = (x => x)
+b = a == a
+c = a == (x => x)

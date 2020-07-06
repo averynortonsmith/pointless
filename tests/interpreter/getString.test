@@ -1,0 +1,7 @@
+
+output = [a, b, c, d] |> println
+
+a = 123.!getString
+b = false.!getString
+c = "asdf".!getString
+d = Foo.!getString

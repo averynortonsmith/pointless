@@ -1,0 +1,7 @@
+
+output = [a] |> println
+
+a = {bar = false} with {
+  $.bar = [1 2 3]
+  $.bar[1] = 4
+}

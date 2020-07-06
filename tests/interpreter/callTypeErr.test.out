@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Type Error:
+
+Expected type 'PtlsBuiltIn or PtlsFunc', got 'PtlsNumber'
+-------------------------------------------------------------------------------
+
+At (line 2 column 10) in 'tests/interpreter/callTypeErr.test'
+output = 123(3) |> println
+         ^
+At (line 2 column 13) in 'tests/interpreter/callTypeErr.test'
+output = 123(3) |> println
+            ^

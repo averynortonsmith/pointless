@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Type Error:
+
+Expected type 'PtlsObject', got 'PtlsDict'
+-------------------------------------------------------------------------------
+
+At (line 2 column 10) in 'tests/interpreter/fieldRefTypeErr.test'
+output = {"x": 123}.y |> println
+         ^
+At (line 2 column 20) in 'tests/interpreter/fieldRefTypeErr.test'
+output = {"x": 123}.y |> println
+                   ^

@@ -1,0 +1,39 @@
+-------------------------------------------------------------------------------
+Type Error:
+
+Expected type 'PtlsNumber', got 'PtlsBool'
+-------------------------------------------------------------------------------
+
+At (line 4 column 9) in 'tests/interpreter/numOpsTypeErrRight.test'
+a = 5 - false
+        ^
+At (line 4 column 7) in 'tests/interpreter/numOpsTypeErrRight.test'
+a = 5 - false
+      ^
+At (line 216 column 18) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/list.ptls'
+  else [func(head(list))] ++ map(func, tail(list))
+                 ^
+At (line 50 column 13) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/list.ptls'
+  else [head(list)] ++ prependToAll(sep, tail(list))
+            ^
+At (line 239 column 35) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/list.ptls'
+  else reduce(func, func(acc, head(list)), tail(list))
+                                  ^
+At (line 33 column 47) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/show.ptls'
+  where elemStr = iter |> toList |> map(repr) |> join(sep)
+                                              ^
+At (line 15 column 3) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/string.ptls'
+  |> concatStrings
+  ^
+At (line 18 column 32) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/string.ptls'
+concatStrings(strings) = reduce(add, "", strings)
+                               ^
+At (line 10 column 28) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/io.ptls'
+println(value) = print(show(value) + "\n")
+                           ^
+At (line 21 column 39) in '/home/averyn/Documents/ptlsDev/pointless/bin/../prelude/show.ptls'
+  case is(PtlsList, value)    showList(value)
+                                      ^
+At (line 2 column 14) in 'tests/interpreter/numOpsTypeErrRight.test'
+output = [a] |> println
+             ^

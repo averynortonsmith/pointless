@@ -1,0 +1,6 @@
+
+output = [a, b, c] |> println
+
+a = 1.!getFloat
+b = "123".!getFloat
+c = false.!getFloat

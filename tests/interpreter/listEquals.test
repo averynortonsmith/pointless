@@ -1,0 +1,6 @@
+
+output = [a, b, c] |> println
+
+a = [1, 2, 3]
+b = a == a
+c = a == [1, 2, 3]

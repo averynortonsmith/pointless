@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Type Error:
+
+Expected type 'PtlsDict or PtlsArray', got 'PtlsList'
+-------------------------------------------------------------------------------
+
+At (line 2 column 10) in 'tests/interpreter/indexErr.test'
+output = [1, 2, 3][0] |> println
+         ^
+At (line 2 column 19) in 'tests/interpreter/indexErr.test'
+output = [1, 2, 3][0] |> println
+                  ^

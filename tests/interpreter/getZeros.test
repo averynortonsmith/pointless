@@ -1,0 +1,5 @@
+
+output = [a, b] |> println
+
+a = PtlsArray.!getZeros
+b = PtlsArray.!getZeros(10)

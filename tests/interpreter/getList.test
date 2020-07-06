@@ -1,0 +1,8 @@
+
+output = [a, b, c, d, e] |> println
+
+a = [1, 2, 3].!getList
+b = {1, 2, 3}.!getList
+c = [1 2 3].!getList
+d = "asdf".!getList
+e = (1, 2, 3).!getList

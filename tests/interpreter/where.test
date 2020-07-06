@@ -1,0 +1,10 @@
+
+output = [x, y, z, a, b] |> println
+
+x = x where x = 3 
+y = (a + b where a = 3) where b = 2 
+z = id where id(n) = n
+a = x + y where {
+  (x, y) = ("asdf", "")
+}
+b = a where foo = "bar"

@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Parser Error:
+
+Expected 'Newline or Semicolon', got 'Neg'
+-------------------------------------------------------------------------------
+
+At (line 4 column 11) in 'tests/interpreter/numOpsTypeErrLeft.test'
+a = false - 5
+          ^

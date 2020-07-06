@@ -1,0 +1,5 @@
+
+output = [a,b] |> println
+
+a = {false}.!getDelElem(false)
+b = {false}.!getDelElem(true)

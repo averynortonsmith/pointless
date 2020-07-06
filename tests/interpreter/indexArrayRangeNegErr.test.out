@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Index Error:
+
+Invalid index -1, for array with length 3
+-------------------------------------------------------------------------------
+
+At (line 2 column 17) in 'tests/interpreter/indexArrayRangeNegErr.test'
+output = [1 2 3][-1] |> println
+                ^

@@ -1,0 +1,5 @@
+
+output = [a, b] |> println
+
+a = 123 in {123: false, "asdf": []}
+b = false in {123: false, "asdf": []}

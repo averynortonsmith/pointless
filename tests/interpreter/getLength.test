@@ -1,0 +1,9 @@
+
+output = [a, b, c, d, e, f] |> println
+
+a = [1 2 3].!getLength
+b = {1, 2, 3}.!getLength
+c = {1: 2, 3: false}.!getLength
+d = "qwerty".!getLength
+e = (1, 2, 3).!getLength
+f = Foo(1, 2, 3).!getLength

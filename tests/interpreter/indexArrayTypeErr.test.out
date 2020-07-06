@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Type Error:
+
+Expected type 'PtlsNumber', got 'PtlsBool'
+-------------------------------------------------------------------------------
+
+At (line 2 column 18) in 'tests/interpreter/indexArrayTypeErr.test'
+output = [1 2 3][false] |> println
+                 ^
+At (line 2 column 17) in 'tests/interpreter/indexArrayTypeErr.test'
+output = [1 2 3][false] |> println
+                ^

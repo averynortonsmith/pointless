@@ -1,0 +1,5 @@
+
+output = [a, b] |> println
+
+a = {1: false, "asdf": Foo}
+b = a[1]

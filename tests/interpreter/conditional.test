@@ -1,0 +1,4 @@
+
+output = [a] |> println
+
+a = if false then 0 else "asdf"

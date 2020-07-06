@@ -1,0 +1,4 @@
+
+output = [a] |> println
+
+a = {foo = 123} with $.bar[123].baz = false

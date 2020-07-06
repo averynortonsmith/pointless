@@ -1,0 +1,9 @@
+
+output = [x, y, z, a] |> println
+
+f(a, b) = a + b
+x = f(1)(2)
+y = f(1, 2)
+z = f(1)
+a = foo(1, 2)(3)
+foo(a, b, c) = a + b * c

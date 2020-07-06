@@ -1,0 +1,6 @@
+
+output = [w, x, y] |> println
+
+w = for a in [1, 2, false] when false yield a
+x = for a in [1, 2, false] when is(PtlsBool, a) yield a
+y = for a in [1, 2, 3] when is(PtlsBool, a) yield a

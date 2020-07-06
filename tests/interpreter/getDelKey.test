@@ -1,0 +1,7 @@
+
+output = [a, b, c, d] |> println
+
+a = {1: 2, 3: false}.!getDelKey(1)
+b = {1: false}.!getDelKey(1)
+c = {1: false, false: "Asdf"}.!getDelKey(0)
+d = {}.!getDelKey(true)

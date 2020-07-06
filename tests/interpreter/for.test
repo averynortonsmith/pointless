@@ -1,0 +1,9 @@
+
+output = [a, b, c, d, e, f] |> println
+
+a = for a in [] yield a
+b = for a in Empty yield a
+c = for a in [1, 2, 3] yield a
+d = for a in [1, 2, 3].!getTail yield a
+e = for a in [1, 2, 3] for b in [true, false] yield (a, b)
+f = for a in [1, 2, 3] for a in [true, false] yield (a, a)

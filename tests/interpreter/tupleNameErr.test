@@ -1,0 +1,4 @@
+
+output = [a] |> println
+
+a = (123, b)

@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Type Error:
+
+Invalid field 'y' for Object with fields {x}
+-------------------------------------------------------------------------------
+
+At (line 2 column 19) in 'tests/interpreter/fieldRefErr.test'
+output = {x = 123}.y |> println
+                  ^

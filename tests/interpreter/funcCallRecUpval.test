@@ -1,0 +1,4 @@
+
+output = a(10) |> println 
+
+a = b where b(n) = if n == 0 then 1 else n * b(n - 1)

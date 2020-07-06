@@ -1,0 +1,6 @@
+
+output = [a, b] |> println
+
+x = {0: 123}
+a = x == x
+b = x == {0: 123}

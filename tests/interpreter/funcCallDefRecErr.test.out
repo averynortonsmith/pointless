@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Name Error:
+
+Circular definition for name 'b'
+-------------------------------------------------------------------------------
+
+At (line 4 column 51) in 'tests/interpreter/funcCallDefRecErr.test'
+a = b where b = ((n) => if n == 0 then 1 else n * b(n - 1))(2)
+                                                  ^
+At (line 4 column 60) in 'tests/interpreter/funcCallDefRecErr.test'
+a = b where b = ((n) => if n == 0 then 1 else n * b(n - 1))(2)
+                                                           ^

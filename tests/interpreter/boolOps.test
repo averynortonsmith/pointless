@@ -1,0 +1,5 @@
+
+output = [a, b] |> println
+
+a = true and false
+b = false or true

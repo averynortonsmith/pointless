@@ -1,0 +1,6 @@
+
+output = [a, b, c] |> println
+
+(_, _) = (1, 2)
+(_, a) = ("asdf", 2)
+(b, c) = ("asdf", 2)

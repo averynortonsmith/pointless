@@ -1,0 +1,4 @@
+
+output = [a, b] |> println
+
+(a, b) = 123
