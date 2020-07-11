@@ -77,44 +77,18 @@ Installing on Linux, Mac and Windows (PowerShell):
 
     (for repl readline support, try [rlwrap](https://github.com/hanslub42/rlwrap)) 
 
-### Compiling the interpreter with dart2native:
+### Compiling the interpreter with Nim compiler:
 
-Compiling the interpreter avoids the startup overhead of the Dart VM.
+Compiling the interpreter avoids the startup overhead of the Compiling just before running, every time.
 
 After performing the steps above:
 
-- Linux and Mac:
+- On your favorite os:
 
     Run the following commands in the repository root (generates ./bin/pointless):
   
     ```
-    dart2native lib/pointless.dart -o bin/pointless
-    ```
-
-    Alternatively, using Make, simply run:
-
-    ```
-    make
-    ```
-
-    Now you can run Pointless like this:
-
-    ```
-    bin/pointless examples/beer/beer.ptls
-    ```
-
-- Windows:
-
-    Run the following commands in the repository root (generates ./bin/pointless.exe):
-
-    ```
-    dart2native lib/pointless.dart -o bin/pointless.exe
-    ```
-
-    Now you can run Pointless like this:
-
-    ```
-    bin/pointless.exe examples/beer/beer.ptls
+    nim c [optimization and other flags] [path to the interpreter.nim file]
     ```
 
 Contributions are welcome!
