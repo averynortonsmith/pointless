@@ -2,8 +2,10 @@
 
 ### [Why Learn Pointless?](https://github.com/pointless-lang/pointless/blob/master/why_pointless.md)
 
-#### Documentation and examples at [https://ptls.dev](https://ptls.dev)
+## Important
+This is just another implementation of pointless in nim. It is yet to include a baked in prelude, and the caching of imports.
 
+#### Documentation and examples at [https://ptls.dev](https://ptls.dev)
 Pointless 0.1.0 brings a number of changes from the initial release, informed by feedback and experience. The latest implementation of Pointless is interpreted, rather than compiled, and is written in Dart. This move marks a deemphasis on performance with a focus instead on improved language design and faster development. It's my hope that the new Dart-based implementation will make Pointless easier for others to install, use, and modify.
 
 #### New utilities:
