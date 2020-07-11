@@ -1,0 +1,40 @@
+isEmpty(list) = list == Empty
+head(list) = list.!getHead
+tail(list) = list.!getTail
+
+reduce(func, acc, list) =
+  if isEmpty(list) then acc
+  else reduce(func, func(acc, head(list)), tail(list))
+
+filter(func, list) =
+  if isEmpty(list) then []
+
+  else if func(head(list))
+    then [head(list)] ++ filter(func, tail(list))
+
+  else filter(func, tail(list))
+
+map(func, list) =
+  if isEmpty(list) then []
+  else [func(head(list))] ++ map(func, tail(list))
+
+concatMap(func, lists) = lists |> map(func) |> concat
+concat(lists) =
+  if isEmpty(lists) then []
+  else head(lists) ++ concat(tail(lists))
+
+sum(list) = reduce((a, b) => a+b, 0, list)
+
+multiply(list) = reduce((a, b) => a*b, 1, list)
+
+range(init, count) = if count==init then [init]
+                     else range(init, count-1) ++ [count]
+
+output = [
+          (for i in range(1, 4) yield i)
+          |> filter(n => n!=3)
+          |> map(n => n**2)
+          |> sum
+          |> range(1)
+          |> multiply
+        ]
