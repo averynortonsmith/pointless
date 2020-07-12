@@ -2,7 +2,7 @@ from os import existsFile, commandLineParams
 import location
 import ASTNode
 import tables
-import NodeTypes
+import nodeTypes
 from tokenTypes as Tok import nil
 import ptlsError
 import strutils
