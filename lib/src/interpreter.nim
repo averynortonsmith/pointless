@@ -1029,8 +1029,7 @@ proc dispatch(immut_env: Env, immut_node: ASTNode, immut_traceLocs: seq[Location
 
         for importNode in imports:
           let name = importNode.as_node.identifier
-          let thunk = createThunk(name, proc() : ptlsValue = eval(env, importNode))
-          env.addDefThunk(thunk)
+          env.addDefName(name, importNode)
 
         for defNode in defs:
           env.addDef(defNode)
