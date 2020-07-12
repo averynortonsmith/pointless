@@ -2,7 +2,7 @@ from os import existsFile, commandLineParams
 import location
 import ASTNode
 import tables
-import NodeTypes
+import nodeTypes
 from tokenTypes as Tok import nil
 import ptlsError
 import strutils
@@ -530,7 +530,7 @@ proc getField(this: ptlsValue, name: string) : ptlsValue =
     elif name == "!getTan": return createPtlsNumber(nil, tan(this.numValue))
     elif name == "!getLn": return createPtlsNumber(nil, ln(this.numValue))
     elif name == "!getString": return createPtlsString(nil, $this.numValue)
-    elif name == "!getType": return createPtlsLabel(nil, "PtlsList")
+    elif name == "!getType": return createPtlsLabel(nil, "PtlsNumber")
   elif this.ValueType == ptlsObject:
     if this.objEnv.defs.hasKey(name): return this.objEnv.lookupName(name)
     elif name == "!getLabel": return this.label
@@ -670,6 +670,7 @@ proc getZeros(this: ptlsValue, val: ptlsValue) : ptlsValue =
 
 proc debugHandler(this: ptlsValue, str: string) =
   if this.ValueType != ptlsLabel: quit "You called a label method on something that's not a label"
+  echo str
 
 proc getDebug(this: ptlsValue, val: ptlsValue) : ptlsValue =
   if this.ValueType != ptlsLabel: quit "You called a label method on something that's not a label"
@@ -870,7 +871,10 @@ proc handleBinaryOp(env: Env, op: Tok.Tok, lhsNode: ASTNode, rhsNode: ASTNode) :
       error.msg = "Division by zero";
       error.locs.add(rhs.loc);
       raise error
-    return createPtlsNumber(nil, lhs.numValue / rhs.numValue);
+
+    # https://stackoverflow.com/a/5385053
+    let result = ((lhs.numValue mod rhs.numValue) + rhs.numValue) mod rhs.numValue
+    return createPtlsNumber(nil, result);
 
   elif op.str == Tok.Mod.str:
     let lhs = evalCheck(env, lhsNode, @[ptlsNumber]);
@@ -1143,4 +1147,5 @@ except PtlsError as err:
   echo err.locs.deduplicate.join("\n")
   raise
 
-echo "[" & sequence.join(", ") & "]"
+for elem in sequence:
+  echo elem
