@@ -159,7 +159,7 @@ proc getName(this: Parser) : ASTNode =
 
 proc getString(this: Parser) : ASTNode =
   let token = this.getNext(@[Tok.String])
-  let str = token.value.unescape()
+  let str = token.value.unescape().replace("\\n", "\n")
   return ASTNode(NodeType: Node.String, location: token.loc, strValue: str)
 
 proc getNumber(this: Parser) : ASTNode =
@@ -211,7 +211,7 @@ proc getArray2D(this: Parser) : ASTNode =
   if (len(elems) == 1):
     return elems[0]
 
-  return ASTNode(NodeType: Node.List, location: elems[0].location, list_elems: elems)
+  return ASTNode(NodeType: Node.Array, location: elems[0].location, array_elems: elems)
 
 proc getParenElements(this: Parser, handler: proc(this: Parser) : ASTNode) : seq[ASTNode] =
   let loc = this.peek(@[Tok.LParen]).loc;
