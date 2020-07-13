@@ -1,4 +1,5 @@
 from os import existsFile, commandLineParams
+import token
 import location
 import ASTNode
 import tables
@@ -77,6 +78,13 @@ type
 
   RuntimeValueNode = ref object of ASTNode
     value: ptlsValue
+
+  SourceFile = ref object of RootObj
+    path: string
+    text: string
+    tokens: seq[Token]
+    ast: ASTNode
+    env: Env
 
 # PtlsValue Constructors
 proc `$`*(this: ptlsValue): string
@@ -774,6 +782,9 @@ proc checkLength(this: ptlsValue, length: int) : ptlsValue =
 
   return this
 
+# Source Object HashMap
+var sourceCache = initTable[string, SourceFile]()
+
 # Binary Operation handler
 proc handleUnaryOp(env: Env, op: Tok.Tok, operandNode: ASTNode) : ptlsValue =
   if op.str == Tok.Neg.str:
@@ -873,8 +884,8 @@ proc handleBinaryOp(env: Env, op: Tok.Tok, lhsNode: ASTNode, rhsNode: ASTNode) :
       raise error
 
     # https://stackoverflow.com/a/5385053
-    let result = ((lhs.numValue mod rhs.numValue) + rhs.numValue) mod rhs.numValue
-    return createPtlsNumber(nil, result);
+    let res = ((lhs.numValue mod rhs.numValue) + rhs.numValue) mod rhs.numValue
+    return createPtlsNumber(nil, res);
 
   elif op.str == Tok.Mod.str:
     let lhs = evalCheck(env, lhsNode, @[ptlsNumber]);
@@ -1112,12 +1123,20 @@ proc dispatch(immut_env: Env, immut_node: ASTNode, immut_traceLocs: seq[Location
 
       of Node.Import:
         let importValue = evalCheck(env, node.path, @[ptlsString])
-        if not existsFile(importValue.strValue):
-          let error = returnPtlsError("IO Error")
-          error.msg = "The file " & importValue.strValue & " doesn't exist"
-          raise error
-        let source = eval(createEnv(), makeAST(getToks(@(readFile(importValue.strValue)).filter(proc(x: char) : bool = x!='\r').join(""), importValue.strValue)))
-        return createPtlsObject(nil, source.objEnv)
+        if not sourceCache.contains(importValue.strValue):
+          if not existsFile(importValue.strValue):
+            let error = returnPtlsError("IO Error")
+            error.msg = "The file " & importValue.strValue & " doesn't exist"
+            raise error
+          let text = @(readFile(importValue.strValue)).filter(proc(x: char) : bool = x!='\r').join("")
+          let tokens = getToks(text, importValue.strValue)
+          let ast = makeAST(tokens)
+          let env = evalCheck(createEnv(), ast, @[ptlsObject])
+          let source = SourceFile(path: importValue.strValue, text: text, tokens: tokens, ast: ast, env: env.objEnv)
+          sourceCache[importValue.strValue] = source
+          return createPtlsObject(nil, source.env)
+        let source = sourceCache[importValue.strValue]
+        return createPtlsObject(nil, source.env)
 
       of Node.Pair: quit "We hate pairs"
       of Node.Blank: quit "We hate blanks"
@@ -1138,13 +1157,9 @@ let program = @(readFile(commands[0])).filter(proc(x: char) : bool = x!='\r').jo
 let toks = getToks(program, commands[0])
 let ast = makeast(toks)
 let env = eval(createEnv(), ast).objEnv
-var sequence : seq[ptlsValue] = @[]
 try:
   for element in getOutput(env):
-    sequence.add(element)
+    echo element
 except PtlsError as err:
   echo err.locs.deduplicate.join("\n")
   raise
-
-for elem in sequence:
-  echo elem
