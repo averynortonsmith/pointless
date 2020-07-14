@@ -1,0 +1,72 @@
+getName := NAME
+getString := STRING
+getNumber := NUMBER
+getBool := BOOL
+getLabel := LABEL getTuple? getObject?
+getList := LARRAY (getClause (COMMA getClause)*)? RARRAY
+getArray1D := LARRAY (getClause+)? RARRAY
+getArray2D := LARRAY (getArray1D+)? RARRAY
+getTuple := LPAREN (getClause (COMMA getClause)*)? RPAREN
+getTupleName := BLANK | getName
+getDefLHS := (LPAREN (getClause (COMMA getClause)*)? RPAREN) | getName
+getNameDef := getDefLHS ASSIGN getClause
+getFuncDef := getName LPAREN (getClause (COMMA getClause)*)? RPAREN ASSIGN getClause
+getDef := getFuncDef | getNameDef
+getObject := LBRACKET (getDef+)? RBRACKET
+getPair := getClause COLON getClause
+getDict := LBRACKET (getClause (COMMA getPair)*)? RBRACKET
+getSet := LBRACKET (getClause (COMMA getClause)*)? RBRACKET
+getArrayLiteral := LARRAY (getClause COMMA)? RARRAY | getArray2d
+getParenLiteral := LPAREN RPAREN | getTuple
+getBracketLiteral := LBRACKET RBRACKET | getObject | getDict | getSet
+getUnitBase := getNumber 
+	      | getString 
+	      | getName 
+	      | getLabel 
+	      | getBool 
+	      | getArrayLiteral 
+	      | getParenLiteral 
+	      | getBracketLiteral
+getIndex := LARRAY getClause RARRAY
+getFieldRef := FIELD
+getCall := LPAREN (getClause (COMMA getClause)*)? RPAREN
+getUnit := getUnitBase ((getIndex | getFieldRef | getCall)* (LARRAY | LPAREN | FIELD))?
+getPrefixOp := (NEG | NOT) getPrefixOp | getUnit
+binPipe := binConcat (PIPE binConcat)*
+binContact := binOr (CONCAT binConcat)*
+binOr := binAnd (OR binAnd)*
+binAnd := binEq ((EQUALS | NOTEQ) binEq)*
+binIn := BinComp (IN BinComp)*
+binComp := binTerm ((LESSTHAN | GREATERTHAN | LESSEQ | GREATEQ) binTerm)*
+binTerm := binFactor ((ADD | SUB) binFactor)*
+binFactor := binPower ((MUL | DIV | MOD) binPower)*
+binPow := getPrefixOP (POW binPow)*
+getOperation := binPipe
+getConditional := IF getExpression THEN getClause ELSE getExpression
+getCases := CASE getExpression getClause (ELSE getClause | RBRACKET | getCases)
+getCond := COND LBRACKET getCases RBRACKET
+getFor := FOR getDefLHS IN getExpression getListComp
+getWhen := WHEN getExpression getListComp
+getYield := YIELD getExpression
+getListComp := getFor | getWhen | getYield
+getLambda := ((LPAREN (getName (COMMA getName)*)? RPAREN) | getName) | LAMBDA getClause
+getTry := TRY getClause CATCH getExpression getExpression
+getThrow := THROW getExpression
+getExpression := getConditional
+		| getThrow
+		| getTry
+		| getCond
+		| getCond
+		| getFor
+		| getListComp
+		| getLambda
+		| getOperation
+getWhere := WHERE (getObject | getDef)
+getDefineable := getIndex | getFieldRef
+getWithDef := DOLLAR getDefineable ASSIGN getClause
+getWithDefs := LBRACKET (getWithDef  ((NEWLINE | SEMICOLON) getWithDef)*)? RBRACKET
+getWith := REQUIRES getOperation
+getClause := getWhere | getRequires | getWith
+getExport := EXPORT LBRACKET (getName (COMMA getName)*)? RBRACKET
+getImport := IMPORT getString AS getName
+getProgram := getExport getImport (getDef (NEWLINE | SEMICOLON))* EOF 

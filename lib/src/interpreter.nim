@@ -784,6 +784,41 @@ proc checkLength(this: ptlsValue, length: int) : ptlsValue =
 
 # Source Object HashMap
 var sourceCache = initTable[string, SourceFile]()
+proc createPrelude() : Env =
+  var preludeFiles = [
+      "prelude/array.ptls",
+      "prelude/boolean.ptls",
+      "prelude/chars.ptls",
+      "prelude/deepEq.ptls",
+      "prelude/dict.ptls",
+      "prelude/err.ptls",
+      "prelude/format.ptls",
+      "prelude/function.ptls",
+      "prelude/io.ptls",
+      "prelude/iter.ptls",
+      "prelude/label.ptls",
+      "prelude/list.ptls",
+      "prelude/numerical.ptls",
+      "prelude/random.ptls",
+      "prelude/set.ptls",
+      "prelude/show.ptls",
+      "prelude/sort.ptls",
+      "prelude/string.ptls",
+      "prelude/tuple.ptls",
+      "prelude/types.ptls",
+    ]
+  let filename = "<prelude>"
+  var contents = ""
+  for file in preludeFiles:
+    contents.add($readFile(file))
+  let tokens = getToks(contents, filename)
+  let ast = makeAST(tokens)
+  let env = evalCheck(createEnv(), ast, @[ptlsObject]).objEnv
+  let source = SourceFile(path: filename, tokens: tokens, ast: ast, env: env)
+  sourceCache[filename] = source
+  return env
+
+let baseEnv = createPrelude()
 
 # Binary Operation handler
 proc handleUnaryOp(env: Env, op: Tok.Tok, operandNode: ASTNode) : ptlsValue =
@@ -1131,7 +1166,7 @@ proc dispatch(immut_env: Env, immut_node: ASTNode, immut_traceLocs: seq[Location
           let text = @(readFile(importValue.strValue)).filter(proc(x: char) : bool = x!='\r').join("")
           let tokens = getToks(text, importValue.strValue)
           let ast = makeAST(tokens)
-          let env = evalCheck(createEnv(), ast, @[ptlsObject])
+          let env = evalCheck(createEnv(baseEnv), ast, @[ptlsObject])
           let source = SourceFile(path: importValue.strValue, text: text, tokens: tokens, ast: ast, env: env.objEnv)
           sourceCache[importValue.strValue] = source
           return createPtlsObject(nil, source.env)
@@ -1156,7 +1191,7 @@ let program = @(readFile(commands[0])).filter(proc(x: char) : bool = x!='\r').jo
 
 let toks = getToks(program, commands[0])
 let ast = makeast(toks)
-let env = eval(createEnv(), ast).objEnv
+let env = eval(createEnv(baseEnv), ast).objEnv
 try:
   for element in getOutput(env):
     echo element
