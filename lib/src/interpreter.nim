@@ -566,6 +566,16 @@ proc getField(this: ptlsValue, name: string) : ptlsValue =
           keys.add(key)
           return PtlsListFromValues(keys)
   elif this.ValueType == ptlsString:
+    if name == "!getLower":
+      var new_str = ""
+      for c in this.strValue:
+        new_str.add(c.toLowerAscii())
+      return createPtlsString(nil, new_str)
+    elif name == "!getUpper":
+      var new_str = ""
+      for c in this.strValue:
+        new_str.add(c.toUpperAscii())
+      return createPtlsString(nil, new_str)
     if name == "!getInt": return createPtlsNumber(nil, float(int(this.strValue.parseFloat())))
     elif name == "!getFloat": return createPtlsNumber(nil, this.strValue.parseFloat())
     elif name == "!getString": return this
