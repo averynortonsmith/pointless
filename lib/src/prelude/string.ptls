@@ -54,3 +54,13 @@ getPad(n, string) =
 -- Right-pad a string with spaces to make its length >= n
 
 padRight(n, string) = string + getPad(n, string)
+
+-------------------------------------------------------------------------------
+-- Convert string to lower case
+
+toLower(string) = string.!getLower
+
+-------------------------------------------------------------------------------
+-- Convert string to upper case
+
+toUpper(string) = string.!getUpper

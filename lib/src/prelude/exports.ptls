@@ -134,7 +134,9 @@ export {
   unwrapObject,
   zeroArray,
   notIs,
-  deepEq,
-  deepNotEq,
   count,
+  readFile,
+  readFileLines,
+  toLower,
+  toUpper,
 }

@@ -17,7 +17,7 @@ randRangeUp(a, b) = floor(a + randFloat(b - a + 1))
 randChoice(elems) =
   elems
   |> toList
-  |> at(randRange(length(elems)))
+  |> at(randRange(0, length(elems) - 1))
 
 -------------------------------------------------------------------------------
 -- Shuffle an iterable of values

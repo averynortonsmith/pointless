@@ -34,3 +34,13 @@ debug(value) = IO.!getDebug(value)
 -- Read lines of input lazily
 
 readLines = IO.!getLines
+
+------------------------------------------------------------------------------
+-- Get the text from the file at a given path
+
+readFile = IO.!getReadFile
+
+------------------------------------------------------------------------------
+-- Get the lines from the file at a given path
+
+readFileLines = IO.!getReadFileLines
