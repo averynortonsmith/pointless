@@ -789,7 +789,6 @@ proc createPrelude() : Env =
       "prelude/array.ptls",
       "prelude/boolean.ptls",
       "prelude/chars.ptls",
-      "prelude/deepEq.ptls",
       "prelude/dict.ptls",
       "prelude/err.ptls",
       "prelude/format.ptls",
