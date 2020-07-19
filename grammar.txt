@@ -3,21 +3,21 @@ getString := STRING
 getNumber := NUMBER
 getBool := BOOL
 getLabel := LABEL getTuple? getObject?
-getList := LARRAY (getClause (COMMA getClause)*)? RARRAY
-getArray1D := LARRAY (getClause+)? RARRAY
-getArray2D := LARRAY (getArray1D+)? RARRAY
-getTuple := LPAREN (getClause (COMMA getClause)*)? RPAREN
+getList := LARRAY (getClause (COMMA getClause)* COMMA?)? RARRAY
+getArray1D := LARRAY getClause (WHITESPACE getClause)* RARRAY
+getArray2D := getArray1D (NEWLINE getArray1D)*
+getTuple := LPAREN getClause (COMMA getClause)* RPAREN
 getTupleName := BLANK | getName
-getDefLHS := (LPAREN (getClause (COMMA getClause)*)? RPAREN) | getName
+getDefLHS := (LPAREN (getTupleName (COMMA getTupleName)*)? RPAREN) | getName
 getNameDef := getDefLHS ASSIGN getClause
-getFuncDef := getName LPAREN (getClause (COMMA getClause)*)? RPAREN ASSIGN getClause
+getFuncDef := getName LPAREN getName (COMMA getName)* RPAREN ASSIGN getClause
 getDef := getFuncDef | getNameDef
-getObject := LBRACKET (getDef+)? RBRACKET
+getObject := LBRACKET getDef ((NEWLINE | SEMICOLON) getDef)* RBRACKET
 getPair := getClause COLON getClause
-getDict := LBRACKET (getClause (COMMA getPair)*)? RBRACKET
-getSet := LBRACKET (getClause (COMMA getClause)*)? RBRACKET
-getArrayLiteral := LARRAY (getClause COMMA)? RARRAY | getArray2d
-getParenLiteral := LPAREN RPAREN | getTuple
+getDict := LBRACKET (getPair (COMMA getPair)* COMMA?)? RBRACKET
+getSet := LBRACKET getClause (COMMA getClause)* COMMA? RBRACKET
+getArrayLiteral := getArray2d
+getParenLiteral := LPAREN getClause RPAREN | getTuple
 getBracketLiteral := LBRACKET RBRACKET | getObject | getDict | getSet
 getUnitBase := getNumber
 	      | getString
@@ -29,9 +29,9 @@ getUnitBase := getNumber
 	      | getBracketLiteral
 getIndex := LARRAY getClause RARRAY
 getFieldRef := FIELD
-getCall := LPAREN (getClause (COMMA getClause)*)? RPAREN
-getUnit := getUnitBase ((getIndex | getFieldRef | getCall)* (LARRAY | LPAREN | FIELD))?
-getPrefixOp := (NEG | NOT) getPrefixOp | getUnit
+getCall := LPAREN getClause (COMMA getClause)* RPAREN
+getUnit := getUnitBase (getIndex | getFieldRef | getCall)*
+getPrefixOp := (NEG | NOT)? getPrefixOp | getUnit
 binPipe := binConcat (PIPE binConcat)*
 binContact := binOr (CONCAT binConcat)*
 binOr := binAnd (OR binAnd)*
@@ -43,13 +43,13 @@ binFactor := binPower ((MUL | DIV | MOD) binPower)*
 binPow := getPrefixOP (POW binPow)*
 getOperation := binPipe
 getConditional := IF getExpression THEN getClause ELSE getExpression
-getCases := CASE getExpression getClause (ELSE getClause | RBRACKET | getCases)
+getCases := (CASE getExpression getClause)+ (ELSE getClause)?
 getCond := COND LBRACKET getCases RBRACKET
 getFor := FOR getDefLHS IN getExpression getListComp
 getWhen := WHEN getExpression getListComp
 getYield := YIELD getExpression
 getListComp := getFor | getWhen | getYield
-getLambda := ((LPAREN (getName (COMMA getName)*)? RPAREN) | getName) | LAMBDA getClause
+getLambda := ((LPAREN getName (COMMA getName)* RPAREN) | getName) LAMBDA getClause
 getTry := TRY getClause CATCH getExpression getExpression
 getThrow := THROW getExpression
 getExpression := getConditional
@@ -64,14 +64,16 @@ getExpression := getConditional
 getWhere := WHERE (getObject | getDef)
 getDefineable := getIndex | getFieldRef
 getWithDef := DOLLAR getDefineable ASSIGN getClause
-getWithDefs := LBRACKET (getWithDef  ((NEWLINE | SEMICOLON) getWithDef)*)? RBRACKET
-getWith := REQUIRES getOperation
+getWith := LBRACKET (getWithDef  ((NEWLINE | SEMICOLON) getWithDef)*)? RBRACKET
+getRequires := REQUIRES getOperation
 getClause := getWhere | getRequires | getWith
 getExport := EXPORT LBRACKET (getName (COMMA getName)*)? RBRACKET
 getImport := IMPORT getString AS getName
-getProgram := getExport getImport (getDef (NEWLINE | SEMICOLON))* EOF
+getProgram := getExport? (getImport)* (getDef (NEWLINE | SEMICOLON))* EOF
 
 # Notation Explanation
 # Every full caps word is a token and every other sort of word is a reference to another definition
 # Everything else is as you'd expect it to be from a somewhat formal grammar
 # And btw, by "#" I just mean that the following line has nothing to do with the grammar
+
+# When not explicitly used, NEWLINE, WHITESPACE, and COMMENT are skipped by default
