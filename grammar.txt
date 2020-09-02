@@ -1,4 +1,5 @@
 getName := NAME
+getUpval := UPVAL NAME
 getString := STRING
 getNumber := NUMBER
 getBool := BOOL
@@ -22,6 +23,7 @@ getBracketLiteral := LBRACKET RBRACKET | getObject | getDict | getSet
 getUnitBase := getNumber
 	      | getString
 	      | getName
+	      | getUpval
 	      | getLabel
 	      | getBool
 	      | getArrayLiteral
